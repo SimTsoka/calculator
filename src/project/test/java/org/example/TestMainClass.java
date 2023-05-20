@@ -27,12 +27,6 @@ public class TestMainClass {
     }
 
     @Test
-    void testPrint() {
-        Main.print("Welcome to B-Cal");
-        assertEquals("Welcome to B-Cal\n", outputStream.toString());
-    }
-
-    @Test
     void testSetName() {
         main.initialise(generateInputStream("Simon"));
         main.setName();

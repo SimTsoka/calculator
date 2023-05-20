@@ -46,4 +46,6 @@ public class TestInOut {
         byte[] inputStreamData = userInput.getBytes();
         return new ByteArrayInputStream(inputStreamData);
     }
+
+    //TODO: Don't forget to remove duplicate tests in TestMainClass
 }

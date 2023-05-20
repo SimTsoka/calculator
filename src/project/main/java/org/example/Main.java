@@ -1,14 +1,19 @@
 package org.example;
 
+import org.example.inputOutputStreams.InOut;
+
 import java.io.InputStream;
 import java.util.Scanner;
 
 public class Main {
     private String name;
     private Scanner scanner;
+    private InOut inOut = new InOut();
 
     public static void main(String[] args) {
-        print("Welcome to B-Cal");
+        Main program = new Main();
+        program.initialise();
+        program.runProgram();
     }
 
     public void initialise() {
@@ -16,7 +21,12 @@ public class Main {
     }
 
     public void initialise(InputStream inputStream) {
-        scanner = new Scanner(inputStream);
+        inOut.initialise(inputStream);
+    }
+
+    public void runProgram() {
+        inOut.print("Welcome to B-Cal");
+        setName();
     }
 
     public static void print(String stmt) {
@@ -24,8 +34,10 @@ public class Main {
     }
 
     public void setName() {
-        print("What is your name? ");
-        name = scanner.nextLine();
+        name = inOut.prompt("What is your name? ");
+//        print("What is your name? ");
+//        name = scanner.nextLine();
+
     }
 
     public String getName() {
